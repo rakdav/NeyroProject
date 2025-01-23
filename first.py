@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 (train_images,train_labels),(test_images,test_labels)=datasets.cifar10.load_data()
 train_images=train_images/255.0
 test_images=test_images/255.0
-class_names = ['автомобиль', 'самолет', 'собака', 'кошка', 'олень','свинина','корабль']
+class_names = ['автомобиль', 'самолет','птица','собака', 'олень','кошка','корабль','лягушка','корабль','грузовик']
 model=models.Sequential(
     [layers.Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(32,32,3)),
      layers.MaxPooling2D(pool_size=(2, 2)),
@@ -30,5 +30,8 @@ def predict_image(image_path):
     predicted_class=class_names[np.argmax(predict)]
     print('Predict:',predicted_class)
 
-predict_image('6447967656.jpg')
+# predict_image('12354.png')
+# predict_image('6447967656.jpg')
+predict_image('images.jpg')
+
 

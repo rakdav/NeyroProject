@@ -19,7 +19,7 @@ model=models.Sequential(
      layers.Dense(10, activation='softmax')
 ])
 model.compile(optimizer='adam',loss='sparse_categorical_crossentropy',metrics=['accuracy'])
-model.fit(train_images,train_labels,epochs=5,batch_size=32,validation_split=0.2)
+model.fit(train_images,train_labels,epochs=1,batch_size=32,validation_split=0.2)
 
 def predict_image(image_path):
     img=Image.open(image_path).resize((32,32)).convert('RGB')
@@ -30,8 +30,8 @@ def predict_image(image_path):
     predicted_class=class_names[np.argmax(predict)]
     print('Predict:',predicted_class)
 
-# predict_image('12354.png')
-# predict_image('6447967656.jpg')
+predict_image('12354.png')
+predict_image('6447967656.jpg')
 predict_image('images.jpg')
 
 
